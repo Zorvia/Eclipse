@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+Thumbs.db
+.next/
+dist/
+coverage/
+.vercel/
+.env
+.vercel
+DeepSeek-R1-Distill-Qwen-7B/

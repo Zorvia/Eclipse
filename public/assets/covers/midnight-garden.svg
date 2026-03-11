@@ -1,0 +1,38 @@
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2e1a"/>
+      <stop offset="100%" stop-color="#2d4a2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)" rx="4"/>
+  <!-- Moon -->
+  <circle cx="220" cy="70" r="25" fill="#f0e6c0" opacity="0.85"/>
+  <circle cx="230" cy="65" r="22" fill="#1a2e1a"/>
+  <!-- Stars -->
+  <circle cx="60" cy="40" r="1.5" fill="#f0e6c0" opacity="0.8"/>
+  <circle cx="120" cy="25" r="1" fill="#f0e6c0" opacity="0.6"/>
+  <circle cx="180" cy="50" r="1.5" fill="#f0e6c0" opacity="0.7"/>
+  <circle cx="40" cy="80" r="1" fill="#f0e6c0" opacity="0.5"/>
+  <circle cx="260" cy="30" r="1" fill="#f0e6c0" opacity="0.6"/>
+  <!-- Flower stems -->
+  <line x1="90" y1="250" x2="90" y2="180" stroke="#4a7a4a" stroke-width="2"/>
+  <line x1="150" y1="250" x2="150" y2="160" stroke="#4a7a4a" stroke-width="2"/>
+  <line x1="210" y1="250" x2="210" y2="190" stroke="#4a7a4a" stroke-width="2"/>
+  <!-- Flowers -->
+  <circle cx="90" cy="175" r="10" fill="#c4a7e7" opacity="0.8"/>
+  <circle cx="150" cy="155" r="12" fill="#e7a7c4" opacity="0.8"/>
+  <circle cx="210" cy="185" r="9" fill="#a7c4e7" opacity="0.8"/>
+  <!-- Ground -->
+  <rect x="0" y="250" width="300" height="150" fill="#1a2e1a" opacity="0.5"/>
+  <text x="150" y="310" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="18" font-weight="bold">The Midnight</text>
+  <text x="150" y="336" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="18" font-weight="bold">Garden</text>
+  <text x="150" y="370" text-anchor="middle" fill="#9e9bab" font-family="sans-serif" font-size="12">Zorvia</text>
+</svg>
+

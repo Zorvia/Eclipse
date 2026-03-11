@@ -1,0 +1,25 @@
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b1717"/>
+      <stop offset="100%" stop-color="#3a2a2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)" rx="4"/>
+  <rect x="85" y="70" width="130" height="90" fill="#2a1e1e" stroke="#8f6b56" stroke-width="3"/>
+  <line x1="90" y1="115" x2="210" y2="115" stroke="#6e5344" stroke-width="2"/>
+  <line x1="150" y1="75" x2="150" y2="155" stroke="#6e5344" stroke-width="2"/>
+  <ellipse cx="130" cy="115" rx="9" ry="7" fill="#b51616"/>
+  <ellipse cx="170" cy="115" rx="9" ry="7" fill="#b51616"/>
+  <circle cx="130" cy="115" r="2.5" fill="#ffdddd"/>
+  <circle cx="170" cy="115" r="2.5" fill="#ffdddd"/>
+  <text x="150" y="305" text-anchor="middle" fill="#f1e5d6" font-family="Georgia, serif" font-size="20" font-weight="bold">The Shut Attic</text>
+  <text x="150" y="355" text-anchor="middle" fill="#b9a89a" font-family="sans-serif" font-size="12">Zorvia</text>
+</svg>
+

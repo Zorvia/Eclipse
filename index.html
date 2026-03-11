@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mycelium — Digital Library</title>
+  <meta name="description" content="A small digital library of short stories.">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a href="#library-grid" class="skip-link">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <h1 class="site-title">Mycelium</h1>
+    <p class="site-subtitle">A digital library by Zorvia</p>
+    <nav class="site-controls" aria-label="Site controls">
+      <button
+        type="button"
+        class="control-btn"
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      >
+        <span class="icon-sun" aria-hidden="true">☀</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section aria-label="Story library">
+      <div class="library-tools" aria-label="Library tools">
+        <form class="search-wrap" role="search" aria-label="Search stories" onsubmit="return false;">
+          <label for="library-search" class="sr-only">Search by title, author, or tag</label>
+          <input
+            id="library-search"
+            class="search-input"
+            type="search"
+            placeholder="Search stories, authors, or tags"
+            autocomplete="off"
+          >
+          <button type="button" class="control-btn search-clear" id="search-clear" aria-label="Clear search">
+            Clear
+          </button>
+        </form>
+
+        <div class="library-meta-row">
+          <div class="filter-row" id="tag-filters" role="toolbar" aria-label="Filter stories by tag"></div>
+          <div class="sort-wrap">
+            <label for="sort-select">Sort</label>
+            <select id="sort-select" class="sort-select" aria-label="Sort stories">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="title-asc">Title A-Z</option>
+              <option value="title-desc">Title Z-A</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+      </div>
+
+      <ul id="library-grid" class="library-grid" role="list">
+        <!-- Cards injected by app.js from stories/manifest.json -->
+      </ul>
+      <p id="library-empty" class="library-empty" hidden>
+        No stories match your search yet. Try clearing filters or searching a different term.
+      </p>
+    </section>
+  </main>
+
+  <!-- Reader overlay (modal) -->
+  <div
+    id="reader-overlay"
+    class="reader-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Story reader"
+    hidden
+  >
+    <div class="reader-chrome">
+      <div class="reader-toolbar">
+        <button type="button" class="reader-btn" id="reader-close" aria-label="Close reader">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="reader-title" id="reader-title"></span>
+        <div class="reader-controls">
+          <button type="button" class="reader-btn" id="font-decrease" aria-label="Decrease font size">A−</button>
+          <button type="button" class="reader-btn" id="font-increase" aria-label="Increase font size">A+</button>
+        </div>
+      </div>
+
+      <div class="reader-body" id="reader-body" tabindex="-1">
+        <article class="reader-content" id="reader-content">
+          <!-- Story HTML injected here -->
+        </article>
+
+        <section class="review-panel" aria-labelledby="reviews-heading">
+          <h2 id="reviews-heading" class="review-heading">Reader Reviews</h2>
+          <p class="review-subtitle">Saved on this device only.</p>
+
+          <form id="review-form" class="review-form">
+            <div class="review-fields">
+              <label for="review-rating">Rating</label>
+              <select id="review-rating" required>
+                <option value="">Select</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Great</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+              </select>
+            </div>
+
+            <div class="review-fields">
+              <label for="review-comment">Comment</label>
+              <textarea
+                id="review-comment"
+                rows="3"
+                maxlength="500"
+                placeholder="Share your thoughts about this story"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="reader-btn">Post Review</button>
+          </form>
+
+          <p id="review-summary" class="review-summary" aria-live="polite"></p>
+          <ul id="review-list" class="review-list" aria-label="Story reviews"></ul>
+        </section>
+      </div>
+
+      <nav class="reader-nav" aria-label="Story navigation">
+        <button type="button" class="reader-btn reader-nav-btn" id="reader-prev" aria-label="Previous story">
+          ← Previous
+        </button>
+        <button type="button" class="reader-btn reader-nav-btn" id="reader-next" aria-label="Next story">
+          Next →
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 Zorvia. All credits to the Zorvia Community.</p>
+  </footer>
+
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
+

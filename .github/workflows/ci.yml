@@ -1,0 +1,29 @@
+#
+# Project: Mycelium
+# Owned by Zorvia
+# All credits to the Zorvia Community
+# Licensed under ZPL v2.0 — see LICENSE.md
+#
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run validate:headers
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build

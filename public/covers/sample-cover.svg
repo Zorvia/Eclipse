@@ -1,0 +1,17 @@
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2344"/>
+      <stop offset="100%" stop-color="#3b275d"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g)" rx="20"/>
+  <text x="300" y="360" text-anchor="middle" fill="#f3eef8" font-size="58" font-family="Georgia, serif">Mycelium</text>
+  <text x="300" y="430" text-anchor="middle" fill="#b9b0cc" font-size="28" font-family="Arial, sans-serif">Sample Cover</text>
+</svg>

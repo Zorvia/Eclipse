@@ -1,0 +1,23 @@
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#4a3f6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)" rx="4"/>
+  <circle cx="150" cy="120" r="50" fill="none" stroke="#f0c040" stroke-width="3" opacity="0.9"/>
+  <circle cx="150" cy="120" r="42" fill="#1a1a2e"/>
+  <line x1="150" y1="180" x2="150" y2="220" stroke="#f0c040" stroke-width="2" opacity="0.5"/>
+  <line x1="130" y1="200" x2="170" y2="200" stroke="#f0c040" stroke-width="2" opacity="0.5"/>
+  <text x="150" y="290" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="20" font-weight="bold">The Last</text>
+  <text x="150" y="320" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="20" font-weight="bold">Light</text>
+  <text x="150" y="365" text-anchor="middle" fill="#9e9bab" font-family="sans-serif" font-size="12">Zorvia</text>
+</svg>
+

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "the-shut-attic",
+    "title": "The Shut Attic",
+    "author": "Zorvia",
+    "date": "2026-03-10",
+    "cover": "assets/covers/the-shut-attic.svg",
+    "tags": [
+      "horror",
+      "mystery"
+    ],
+    "htmlPath": "stories/the-shut-attic.html"
+  },
+  {
+    "id": "the-open-door",
+    "title": "The Open Door",
+    "author": "Zorvia",
+    "date": "2026-03-10",
+    "cover": "assets/covers/the-open-door.svg",
+    "tags": [
+      "mystery",
+      "suspense"
+    ],
+    "htmlPath": "stories/the-open-door.html"
+  },
+  {
+    "id": "midnight-garden",
+    "title": "The Midnight Garden",
+    "author": "Zorvia",
+    "date": "2026-03-05",
+    "cover": "assets/covers/midnight-garden.svg",
+    "tags": [
+      "magical-realism",
+      "memory"
+    ],
+    "htmlPath": "stories/midnight-garden.html"
+  },
+  {
+    "id": "beneath-the-waves",
+    "title": "Beneath the Waves",
+    "author": "Zorvia",
+    "date": "2026-02-20",
+    "cover": "assets/covers/beneath-the-waves.svg",
+    "tags": [
+      "fantasy",
+      "ocean"
+    ],
+    "htmlPath": "stories/beneath-the-waves.html"
+  },
+  {
+    "id": "the-last-light",
+    "title": "The Last Light",
+    "author": "Zorvia",
+    "date": "2026-01-15",
+    "cover": "assets/covers/the-last-light.svg",
+    "tags": [
+      "science-fiction",
+      "solitude"
+    ],
+    "htmlPath": "stories/the-last-light.html"
+  }
+]

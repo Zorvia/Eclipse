@@ -1,0 +1,27 @@
+<!--
+Project: Mycelium
+Owned by Zorvia
+All credits to the Zorvia Community
+Licensed under ZPL v2.0 — see LICENSE.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a2342"/>
+      <stop offset="100%" stop-color="#1b4965"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)" rx="4"/>
+  <!-- Waves -->
+  <path d="M0 200 Q75 180 150 200 T300 200 L300 250 Q225 230 150 250 T0 250 Z" fill="#2c7da0" opacity="0.5"/>
+  <path d="M0 220 Q75 200 150 220 T300 220 L300 270 Q225 250 150 270 T0 270 Z" fill="#468faf" opacity="0.4"/>
+  <path d="M0 240 Q75 220 150 240 T300 240 L300 290 Q225 270 150 290 T0 290 Z" fill="#61a5c2" opacity="0.3"/>
+  <!-- Bubbles -->
+  <circle cx="80" cy="160" r="4" fill="none" stroke="#a9d6e5" stroke-width="1" opacity="0.6"/>
+  <circle cx="200" cy="140" r="6" fill="none" stroke="#a9d6e5" stroke-width="1" opacity="0.5"/>
+  <circle cx="140" cy="170" r="3" fill="none" stroke="#a9d6e5" stroke-width="1" opacity="0.7"/>
+  <text x="150" y="330" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="18" font-weight="bold">Beneath the</text>
+  <text x="150" y="356" text-anchor="middle" fill="#e0ddd8" font-family="Georgia, serif" font-size="18" font-weight="bold">Waves</text>
+  <text x="150" y="385" text-anchor="middle" fill="#9e9bab" font-family="sans-serif" font-size="12">Zorvia</text>
+</svg>
+

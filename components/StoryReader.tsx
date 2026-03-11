@@ -165,79 +165,95 @@ export function StoryReader({ story, prevId, nextId }: Props) {
   }
 
   return (
-    <article className="panel reader" ref={readerRef as never} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      <div className="notice" aria-live="polite">Reading progress: {progress}%</div>
-      <h1>{story.title}</h1>
-      <div className="reader-meta">
-        {story.author} • {story.date} • {story.description}
-      </div>
+    <>
+      {/* Fixed progress bar at top */}
+      <div className="progress-bar" style={{ width: `${progress}%` }} />
 
-      <div className="reader-tools">
-        <button className="button" onClick={() => setFontSize((n) => Math.max(0.9, +(n - 0.1).toFixed(1)))}>
-          A-
-        </button>
-        <button className="button" onClick={() => setFontSize((n) => Math.min(1.6, +(n + 0.1).toFixed(1)))}>
-          A+
-        </button>
-        <button className="button" onClick={() => setMeasure((n) => Math.max(55, n - 4))}>Narrow</button>
-        <button className="button" onClick={() => setMeasure((n) => Math.min(82, n + 4))}>Wide</button>
-        <button className="button" onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}>
-          Theme: {theme}
-        </button>
-        {prevId ? (
-          <Link className="button" href={`/story/${prevId}`}>Previous</Link>
-        ) : null}
-        {nextId ? (
-          <Link className="button" href={`/story/${nextId}`}>Next</Link>
-        ) : null}
-      </div>
+      <article className="panel reader" ref={readerRef as never} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+        <h1>{story.title}</h1>
+        <div className="reader-meta">
+          {story.author} · {story.date} · {story.description}
+        </div>
 
-      <section
-        className="reader-body"
-        style={{ ["--reader-size" as string]: readerSize, ["--measure" as string]: `${measure}ch` }}
-        dangerouslySetInnerHTML={{ __html: story.html }}
-      />
+        <div className="reader-tools">
+          <button className="button" onClick={() => setFontSize((n) => Math.max(0.9, +(n - 0.1).toFixed(1)))} aria-label="Decrease font size">
+            A−
+          </button>
+          <button className="button" onClick={() => setFontSize((n) => Math.min(1.6, +(n + 0.1).toFixed(1)))} aria-label="Increase font size">
+            A+
+          </button>
+          <button className="button" onClick={() => setMeasure((n) => Math.max(55, n - 4))}>Narrow</button>
+          <button className="button" onClick={() => setMeasure((n) => Math.min(82, n + 4))}>Wide</button>
+          <button className="button" onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}>
+            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+          </button>
+          {prevId ? (
+            <Link className="button" href={`/story/${prevId}`}>← Previous</Link>
+          ) : null}
+          {nextId ? (
+            <Link className="button" href={`/story/${nextId}`}>Next →</Link>
+          ) : null}
+        </div>
 
-      <hr style={{ borderColor: "var(--border)", margin: "1.2rem 0" }} />
+        <section
+          className="reader-body"
+          style={{ ["--reader-size" as string]: readerSize, ["--measure" as string]: `${measure}ch` }}
+          dangerouslySetInnerHTML={{ __html: story.html }}
+        />
 
-      <section aria-label="Reviews">
-        <h2 style={{ marginTop: 0 }}>Reviews</h2>
-        <p className="notice">Average {avg.toFixed(1)} / 5 ({count} total)</p>
+        <hr className="reader-divider" />
 
-        <form className="controls" onSubmit={handleSubmit}>
-          <div className="controls-row">
-            <input className="input" name="reviewerName" placeholder="Name (optional)" maxLength={40} />
-            <select className="select" name="rating" required>
-              <option value="">Rating</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-            <select className="select" value={sortReviews} onChange={(e) => setSortReviews(e.target.value)}>
-              <option value="newest">Sort reviews: newest</option>
-              <option value="highest">Sort reviews: highest rated</option>
-            </select>
-          </div>
-          <textarea className="textarea" name="body" rows={4} minLength={4} maxLength={500} required />
-          <button className="button button-primary" type="submit">Submit review</button>
-          {message ? <div className={message.includes("posted") ? "success" : "error"}>{message}</div> : null}
-        </form>
+        <section aria-label="Reviews">
+          <h2 style={{ marginTop: 0 }}>Reviews</h2>
+          <p className="notice" style={{ marginBottom: "1rem" }}>
+            {count > 0 ? (
+              <>
+                <span className="review-stars">{"★".repeat(Math.round(avg))}</span>{" "}
+                {avg.toFixed(1)} / 5 · {count} {count === 1 ? "review" : "reviews"}
+              </>
+            ) : (
+              "No reviews yet — be the first!"
+            )}
+          </p>
 
-        <ul className="review-list">
-          {reviews.map((r) => (
-            <li className="review-item" key={r.id}>
-              <div className="notice">
-                {"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)} by {r.reviewerName || "Anonymous"}
-              </div>
-              <div>{r.body}</div>
-              <div className="notice">{new Date(r.createdAt).toLocaleString()}</div>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </article>
+          <form className="review-form" onSubmit={handleSubmit}>
+            <div className="controls-row">
+              <input className="input" name="reviewerName" placeholder="Your name (optional)" maxLength={40} />
+              <select className="select" name="rating" required>
+                <option value="">★ Rating</option>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+              <select className="select" value={sortReviews} onChange={(e) => setSortReviews(e.target.value)}>
+                <option value="newest">Newest first</option>
+                <option value="highest">Highest rated</option>
+              </select>
+            </div>
+            <textarea className="textarea" name="body" rows={3} minLength={4} maxLength={500} required placeholder="Write your review…" />
+            <button className="button button-primary" type="submit">Post review</button>
+            {message ? <div className={message.includes("posted") ? "success" : "error"}>{message}</div> : null}
+          </form>
+
+          <ul className="review-list">
+            {reviews.map((r, i) => (
+              <li className="review-item" key={r.id} style={{ animationDelay: `${0.05 * i}s` }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span>
+                    <span className="review-stars">{"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}</span>{" "}
+                    <strong>{r.reviewerName || "Anonymous"}</strong>
+                  </span>
+                  <span className="notice">{new Date(r.createdAt).toLocaleDateString()}</span>
+                </div>
+                <div className="review-body">{r.body}</div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </article>
+    </>
   );
 }
 
