@@ -1,0 +1,32 @@
+{
+  "name": "mycelium",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mycelium v1.0.0 - reader-first short story library with immersive reading and community reviews.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "validate:headers": "node scripts/validate-headers.js",
+    "validate:stories": "node scripts/validate-stories.js",
+    "check": "npm run validate:headers && npm run lint && npm run test && npm run build"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.2",
+    "next": "^14.2.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.7",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}

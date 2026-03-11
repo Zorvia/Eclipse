@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/reviews/route.ts": {
+      "maxDuration": 10
+    },
+    "app/api/reviews/[id]/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}
